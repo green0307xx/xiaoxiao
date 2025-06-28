@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>请点这里</title>
+    <style>
+        body {
+            background-color: #ccffcc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #love-container {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+        .heart {
+            width: 200px;
+            height: 180px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .heart-shape {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 180px;
+        }
+        .heart-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 2.5em;
+            font-weight: bold;
+            pointer-events: none;
+        }
+        .green-btn {
+            padding: 30px 60px;
+            font-size: 2.5em;
+            color: #fff;
+            background: #4CAF50;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: background 0.2s;
+        }
+        .green-btn:hover {
+            background: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <button class="green-btn" id="showLoveBtn">请点这里</button>
+    <div id="love-container">
+        <div class="heart">
+            <svg class="heart-shape" viewBox="0 0 200 180">
+                <path d="M100 170 L30 100 A40 40 0 1 1 100 40 A40 40 0 1 1 170 100 Z" fill="#e53935"/>
+            </svg>
+            <span class="heart-text">我爱你</span>
+        </div>
+    </div>
+    <script>
+        document.getElementById('showLoveBtn').onclick = function() {
+            document.body.style.background = '#fff';
+            document.getElementById('showLoveBtn').style.display = 'none';
+            document.getElementById('love-container').style.display = 'flex';
+        };
+    </script>
+</body>
+</html>
